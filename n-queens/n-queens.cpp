@@ -37,7 +37,7 @@ void backtrack(int row)
             {
                 std::cout << r << std::endl;
             }
-            std::cout << std::string(N, '-');
+            std::cout << std::endl;
         }
     }
 
@@ -49,9 +49,11 @@ void backtrack(int row)
         }
         
         colums[col] = first_diag[row + col] = second_diag[row - col + N - 1] = 1;
+        board[row][col] = 'Q';
 
         backtrack(row + 1);
-
+        
+        board[row][col] = '.';
         colums[col] = first_diag[row + col] = second_diag[row - col + N - 1] = 0;
     }
 }
@@ -110,6 +112,8 @@ int main(int argc, char *argv[])
     {
         return EXIT_FAILURE;
     }
+
+    init();
 
     backtrack(0);
 
