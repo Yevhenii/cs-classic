@@ -14,12 +14,7 @@ std::vector<int> second_diag;
 
 void init()
 {
-    board.reserve(N);
-    for (auto i = 0; i < N; i++)
-    {
-       board.push_back(std::string(N, '.'));
-    }
-
+    board = std::vector<std::string>(N, std::string(N, '.'));
     colums = std::vector<int>(N, 0);
     first_diag = std::vector<int>(N * 2, 0);
     second_diag = std::vector<int>(N * 2, 0);
