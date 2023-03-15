@@ -1,0 +1,1 @@
+add_executable(n-queens n-queens.cpp)
