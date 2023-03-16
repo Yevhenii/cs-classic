@@ -26,6 +26,7 @@ void backtrack(int row)
     if (row == N)
     {
         num_of_solutions++;
+
         if (print_board)
         {
             for (const auto& r : board)
@@ -34,6 +35,8 @@ void backtrack(int row)
             }
             std::cout << std::endl;
         }
+
+        return;
     }
 
     for (int col = 0; col < N; col++)
